@@ -1,6 +1,6 @@
 from pathlib import Path
 
-def total_salary(path):
+def total_salary(path): # функція підрахунку заробітної плати та середнього значення
     try:
         with open(path,'r',encoding='utf-8') as file:
             lines = file.readlines()
@@ -19,7 +19,6 @@ def total_salary(path):
     except ValueError:
         print('Помиллка в данных')
         return(0,0)
-    
-    return total, int(average)
-total, average = total_salary("first_task/text.txt")
+        return total, int(average)
+total, average = total_salary("first_task/text.txt") #Шлях до файлу
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")

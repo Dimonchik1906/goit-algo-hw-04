@@ -1,28 +1,28 @@
 
-def parse_input(user_input):
+def parse_input(user_input): #Функція отримання команди від користувача
     cmd, *args = user_input.split()
     cmd = cmd.strip().lower()
     return cmd, *args
 
-def add_contact(args, contacts):
+def add_contact(args, contacts): #Функція додавання нового контакту
     name, phone = args
     contacts[name] = phone
     return "Contact added"
 
-def change_contact(args, contacts):
+def change_contact(args, contacts): #Функція зміну номеру 
     name, phone = args
     contacts[name] = phone
     return "Phone change"
 
-def show_phone(args,contacs):
+def show_phone(args,contacs): #Функція показати конакт імя та номер телефону
     name = args
     return print(contacts[name])
 
-def show_all(contacts):
+def show_all(contacts): #Функція показу всіх контактів
     phone_book = list(contacts.items())
     return phone_book
 
-def main():
+def main(): #Функція обробки команд
     contacts = {}
     print("Welcome to the assistant bot!")
     while True:
