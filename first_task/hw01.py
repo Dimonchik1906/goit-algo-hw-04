@@ -13,12 +13,16 @@ def total_salary(path): # функція підрахунку заробітно
     try:
         for line in lines:
             salary = line.strip().split(',')
-            total += int(salary[1])
+            total += float(salary[1])
             count += 1
+        if count == 0:
+            raise ValueError
         average = total / count
     except ValueError:
-        print('Помиллка в данных')
+        print('Помилка в данных')
         return(0,0)
-        return total, int(average)
+    
+    return total, average
+
 total, average = total_salary("first_task/text.txt") #Шлях до файлу
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")

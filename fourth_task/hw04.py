@@ -14,16 +14,21 @@ def change_contact(args, contacts): #Функція зміну номеру
     contacts[name] = phone
     return "Phone change"
 
-def show_phone(args,contacs): #Функція показати конакт імя та номер телефону
-    name = args
-    return print(contacts[name])
+def show_phone(args,contacts): #Функція для показу конакта - імя та номер телефону
+    name = args[0]
+    if name in contacts:
+        return contacts[name]
+    else: 
+        print("username not found")
+        return ''
+    
 
 def show_all(contacts): #Функція показу всіх контактів
     phone_book = list(contacts.items())
     return phone_book
 
 def main(): #Функція обробки команд
-    contacts = {}
+    contacts = {'b':"999"}
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ").strip().lower()
@@ -40,7 +45,7 @@ def main(): #Функція обробки команд
         elif command == "change":
             print(change_contact(args, contacts))
         elif command == "phone":
-            print(change_contact(args, contacts))
+            print(show_phone(args, contacts))
         elif command == "all":
             print(show_all(contacts))
         else:

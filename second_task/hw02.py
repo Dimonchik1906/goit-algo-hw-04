@@ -8,14 +8,14 @@ def get_cats_info(path): #функція отримання даних про к
         print('file not found')
         return(0)
     try:
-        set = {}
+        cats_dict = {}
         cats_info = []
         for line in lines:
             data = line.strip().split(',')
-            set["id"]= data[0]
-            set["name"]= data[1]
-            set["age"]= data[2]
-            cats_info.append({"id":set["id"],"name":set["name"],"age":set["age"]})    
+            cats_dict["id"]= data[0]
+            cats_dict["name"]= data[1]
+            cats_dict["age"]= data[2]
+            cats_info.append({"id":cats_dict["id"],"name":cats_dict["name"],"age":cats_dict["age"]})    
     except ValueError:  #опрацювання помилки данних
         print('Помиллка в данных')
         return(0)
