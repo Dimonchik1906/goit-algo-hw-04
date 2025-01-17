@@ -19,8 +19,7 @@ def show_phone(args,contacts): #Функція для показу конакт�
     if name in contacts:
         return contacts[name]
     else: 
-        print("username not found")
-        return ''
+        return "User not found"
     
 
 def show_all(contacts): #Функція показу всіх контактів
@@ -28,7 +27,7 @@ def show_all(contacts): #Функція показу всіх контактів
     return phone_book
 
 def main(): #Функція обробки команд
-    contacts = {'b':"999"}
+    contacts = {}
     print("Welcome to the assistant bot!")
     while True:
         user_input = input("Enter a command: ").strip().lower()
